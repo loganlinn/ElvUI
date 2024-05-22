@@ -12,9 +12,9 @@ local LoadAddOn = (C_AddOns and C_AddOns.LoadAddOn) or LoadAddOn
 -- GLOBALS: ElvUI_CPU, ElvUI
 
 local function GetName(frame, text)
-	if frame.GetDebugName then
+	if frame and frame.GetDebugName then
 		return frame:GetDebugName()
-	elseif frame.GetName then
+	elseif frame and frame.GetName then
 		return frame:GetName()
 	else
 		return text or 'nil'
