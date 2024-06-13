@@ -308,6 +308,9 @@ function S:LookingForGroupFrames()
 		S:HandleTrimScrollBar(_G.ScenarioQueueFrameRandomScrollFrame.ScrollBar)
 		S:HandleButton(_G.ScenarioQueueFrameFindGroupButton)
 
+		_G.ScenarioQueueFrameSpecificScrollFrame:StripTextures()
+		S:HandleScrollBar(_G.ScenarioQueueFrameSpecificScrollFrame.ScrollBar)
+
 		if _G.ScenarioQueueFrameRandomScrollFrameScrollBar then
 			_G.ScenarioQueueFrameRandomScrollFrameScrollBar:SetAlpha(0)
 		end
@@ -316,6 +319,7 @@ function S:LookingForGroupFrames()
 	-- Raid finder
 	S:HandleButton(_G.LFDQueueFrameFindGroupButton)
 	S:HandleTrimScrollBar(_G.LFDQueueFrameRandomScrollFrame.ScrollBar)
+	S:HandleTrimScrollBar(_G.RaidFinderQueueFrameScrollFrame.ScrollBar)
 
 	_G.LFDParentFrame:StripTextures()
 	_G.LFDParentFrameInset:StripTextures()

@@ -1,3 +1,23 @@
+### Version 13.66 [ May 31st 2024 ]
+*   Classic: Combo points appearing on new targets.
+*   Cataclysm: Reforge skin toggle not working and PVP skin updated.
+*   Raid Utility: Removed the ability to move this in combat because of secure elements.
+*   Timerunning icon added for Chat, Guild Datatext, and Friends Datatext.
+*   Castbar ticks not working properly when castbars were enabled on group frames.
+
+### Version 13.65 [ May 24th 2024 ]
+*   Cataclysm: Druid and Paladin dispel fix.
+*   Cataclysm: AuraWatch & Spell Filter updates.
+*   Cataclysm: Cabal Zealot chat bug fixed.
+*   Cataclysm: Rogue Redirect & Combo Points fixed.
+*   Cataclysm: Friends frame skin error fixed.
+*   Group frames now show Alternative Power options.
+*   Guild Instance Difficulty icon shows correctly.
+*   Missing battleground healer/tank icons on some locales.
+*   Raid Utility: Target Icons (all), Role Icons (party), World Markers (Cata)
+*   Panda Remix: Fixed double character page gem display.
+*   Party Pets & Target: Individual Glow settings added.
+
 ### Version 13.64 [ May 7th 2024 ]
 *   Cataclysm Hotfixes
     *   Shaman dispel conditions fixed. (Thanks Oppzippy)

@@ -115,8 +115,9 @@ function E:GetGearSlotInfo(unit, slot, deepScan)
 			return 'tooSoon'
 		end
 
-		local colorblind = GetCVarBool('colorblindmode') and 4 or 3
-		for x = 2, colorblind do
+		local colorblind = GetCVarBool('colorblindmode')
+		local numLines = E.Cata and (colorblind and 21 or 20) or (colorblind and 4 or 3)
+		for x = 2, numLines do
 			local line = info.lines[x]
 			if line then
 				local text = line.leftText
@@ -218,7 +219,7 @@ do
 		if next(iLevelDB) then wipe(iLevelDB) end
 		if next(tryAgain) then wipe(tryAgain) end
 
-		for i = 1, 17 do
+		for i = 1, E.Cata and 18 or 17 do
 			if i ~= 4 then
 				local slotInfo = E:GetGearSlotInfo(unit, i)
 				if slotInfo == 'tooSoon' then
