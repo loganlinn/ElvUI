@@ -7,6 +7,7 @@ local select = select
 local UnitClass = UnitClass
 local GetNumTalentTabs = GetNumTalentTabs
 local GetTalentTabInfo = GetTalentTabInfo
+local GetActiveTalentGroup = GetActiveTalentGroup
 local GetTalentInfo = GetTalentInfo
 
 local DRUID_FERAL_TAB = 2
@@ -398,7 +399,7 @@ end
 
 function LCS.GetInspectSpecialization() return end
 
-function LCS.GetActiveSpecGroup() return 1 end
+function LCS.GetActiveSpecGroup() return GetActiveTalentGroup and GetActiveTalentGroup() or 1 end
 
 function LCS.GetSpecialization(isInspect, isPet)
 	if (isInspect or isPet) then
@@ -408,8 +409,10 @@ function LCS.GetSpecialization(isInspect, isPet)
 	local specIndex, maxSpent = 0, 0
 
 	for tabIndex = 1, GetNumTalentTabs() do
-		local spent = select(isCata and 5 or 3, GetTalentTabInfo(tabIndex))
-		if (spent > maxSpent) then
+		local _, _, spentEra, _, spentCata = GetTalentTabInfo(tabIndex, false, false, LCS.GetActiveSpecGroup())
+		local spent = (isCata and spentCata) or spentEra
+		spent = tonumber(spent)
+		if spent and (spent > maxSpent) then
 			specIndex, maxSpent = tabIndex, spent
 		end
 	end
